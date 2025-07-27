@@ -1,0 +1,41 @@
+{
+  "manifest_version": 3,
+  "name": "OBIC7勤務表自動入力ツール",
+  "version": "1.0.0",
+  "description": "OBIC7の勤務表入力を自動化するツール",
+  
+  "permissions": [
+    "storage",
+    "activeTab"
+  ],
+  
+  "host_permissions": [
+    "http://obic.gk-net.jp/*"
+  ],
+  
+  "content_scripts": [
+    {
+      "matches": ["http://obic.gk-net.jp/JACWeb30Sat/I003_KozinbetuKinmuhyou2.aspx*"],
+      "js": [
+        "content-scripts/main.js"
+      ],
+      "css": ["content-scripts/styles.css"],
+      "run_at": "document_end"
+    }
+  ],
+  
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}

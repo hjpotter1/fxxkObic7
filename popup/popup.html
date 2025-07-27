@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OBIC7自動入力ツール</title>
+    <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+    <div class="popup-container">
+        <div class="header">
+            <h1>OBIC7自動入力ツール</h1>
+            <div class="version">v1.0.0</div>
+        </div>
+        
+        <div class="content">
+            <div class="section">
+                <h3>📋 基本機能</h3>
+                <p>打刻時間を勤務時間に一括コピー</p>
+                <div class="status" id="status">
+                    <span class="status-indicator"></span>
+                    <span class="status-text">準備完了</span>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h3>⚙️ 設定</h3>
+                <div class="setting-item">
+                    <label>
+                        <input type="checkbox" id="autoFillEnabled" checked>
+                        自動入力機能を有効にする
+                    </label>
+                </div>
+                <div class="setting-item">
+                    <label>
+                        <input type="checkbox" id="showNotifications" checked>
+                        処理結果の通知を表示
+                    </label>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h3>📊 統計</h3>
+                <div class="stats">
+                    <div class="stat-item">
+                        <span class="stat-label">今日の処理回数:</span>
+                        <span class="stat-value" id="todayCount">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">総処理回数:</span>
+                        <span class="stat-value" id="totalCount">0</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h3>ℹ️ 使用方法</h3>
+                <ol class="instructions">
+                    <li>OBIC7の個人別勤務表入力ページを開く</li>
+                    <li>打刻時間が入力されていることを確認</li>
+                    <li>「一括コピー」ボタンをクリック</li>
+                    <li>処理結果を確認する</li>
+                </ol>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <button id="resetStats" class="secondary-btn">統計をリセット</button>
+            <button id="openOptions" class="primary-btn">詳細設定</button>
+        </div>
+    </div>
+    
+    <script src="popup.js"></script>
+</body>
+</html>

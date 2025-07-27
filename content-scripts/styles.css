@@ -1,0 +1,49 @@
+/* OBIC7自動入力ツール - スタイルシート */
+
+/* 一括コピーボタンのスタイル */
+#obic7-auto-copy-btn {
+  margin: 0 5px !important;
+  padding: 4px 12px !important;
+  background-color: #4CAF50 !important;
+  color: white !important;
+  border: none !important;
+  border-radius: 3px !important;
+  cursor: pointer !important;
+  font-size: 12px !important;
+  transition: background-color 0.3s ease !important;
+}
+
+#obic7-auto-copy-btn:hover {
+  background-color: #45a049 !important;
+}
+
+#obic7-auto-copy-btn:disabled {
+  background-color: #cccccc !important;
+  cursor: not-allowed !important;
+}
+
+/* 通知のスタイル */
+#obic7-notification {
+  position: fixed !important;
+  top: 20px !important;
+  right: 20px !important;
+  padding: 12px 20px !important;
+  border-radius: 5px !important;
+  font-size: 14px !important;
+  font-weight: bold !important;
+  z-index: 10000 !important;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3) !important;
+  animation: obic7-slideIn 0.3s ease-out !important;
+}
+
+/* アニメーション */
+@keyframes obic7-slideIn {
+  from { 
+    transform: translateX(100%) !important; 
+    opacity: 0 !important; 
+  }
+  to { 
+    transform: translateX(0) !important; 
+    opacity: 1 !important; 
+  }
+}

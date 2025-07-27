@@ -1,0 +1,209 @@
+/* OBIC7自動入力ツール - ポップアップスタイル */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: 350px;
+    background-color: #f5f5f5;
+}
+
+.popup-container {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.header {
+    background: linear-gradient(135deg, #4CAF50, #45a049);
+    color: white;
+    padding: 16px 20px;
+    text-align: center;
+    position: relative;
+}
+
+.header h1 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.version {
+    font-size: 12px;
+    opacity: 0.9;
+}
+
+.content {
+    padding: 16px 20px;
+}
+
+.section {
+    margin-bottom: 20px;
+}
+
+.section:last-child {
+    margin-bottom: 0;
+}
+
+.section h3 {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.section p {
+    font-size: 12px;
+    color: #666;
+    margin-bottom: 8px;
+}
+
+/* ステータス表示 */
+.status {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    background-color: #e8f5e8;
+    border-radius: 4px;
+    border-left: 3px solid #4CAF50;
+}
+
+.status-indicator {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #4CAF50;
+    animation: pulse 2s infinite;
+}
+
+.status-text {
+    font-size: 12px;
+    color: #2e7d32;
+    font-weight: 500;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+/* 設定項目 */
+.setting-item {
+    margin-bottom: 8px;
+}
+
+.setting-item label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    color: #333;
+    cursor: pointer;
+}
+
+.setting-item input[type="checkbox"] {
+    accent-color: #4CAF50;
+}
+
+/* 統計表示 */
+.stats {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.stat-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.stat-item:last-child {
+    border-bottom: none;
+}
+
+.stat-label {
+    font-size: 12px;
+    color: #666;
+}
+
+.stat-value {
+    font-size: 12px;
+    font-weight: 600;
+    color: #4CAF50;
+}
+
+/* 使用方法 */
+.instructions {
+    font-size: 12px;
+    color: #555;
+    padding-left: 16px;
+}
+
+.instructions li {
+    margin-bottom: 4px;
+    line-height: 1.4;
+}
+
+/* フッター */
+.footer {
+    padding: 16px 20px;
+    background-color: #fafafa;
+    border-top: 1px solid #eee;
+    display: flex;
+    gap: 8px;
+    justify-content: flex-end;
+}
+
+.primary-btn, .secondary-btn {
+    padding: 6px 12px;
+    border: none;
+    border-radius: 4px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.primary-btn {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.primary-btn:hover {
+    background-color: #45a049;
+}
+
+.secondary-btn {
+    background-color: transparent;
+    color: #666;
+    border: 1px solid #ddd;
+}
+
+.secondary-btn:hover {
+    background-color: #f0f0f0;
+}
+
+/* レスポンシブ調整 */
+@media (max-width: 360px) {
+    body {
+        width: 320px;
+    }
+    
+    .content {
+        padding: 12px 16px;
+    }
+    
+    .header {
+        padding: 12px 16px;
+    }
+}
