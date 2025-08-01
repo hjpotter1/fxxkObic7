@@ -22,7 +22,8 @@ OBIC7勤務表ページで「出勤/退勤打刻」の時刻を「出勤/退勤�
 ### 1. Tampermonkeyの導入
 
 1. ブラウザの拡張機能ストアで「Tampermonkey」を検索
-2. Tampermonkeyをインストールして有効化（Chrome系ブラウザでTampermonkey拡張機能（バージョン5.3+）を使用する場合、「ユーザースクリプトを許可」トグル（Chrome 138+では拡張機能の設定から利用可能）または開発者モードのいずれかを有効にする必要があります。）
+2. Tampermonkeyをインストールして有効化（Chrome系ブラウザでTampermonkey拡張機能（バージョン5.3+）を使用する場合、「ユーザースクリプトを許可」トグル（Chrome 138+では拡張機能の設定から利用可能）または開発者モードのいずれかを有効にする必要があります。）https://www.tampermonkey.net/faq.php#Q209
+<img width="1387" height="731" alt="image" src="https://github.com/user-attachments/assets/b3dbf5ae-6723-404d-b106-1758b744f8ec" />
 
 ### 2. UserScriptのインストール
 
@@ -30,6 +31,7 @@ OBIC7勤務表ページで「出勤/退勤打刻」の時刻を「出勤/退勤�
 2. 「新しいスクリプトを作成」をクリック
 3. `obic7-userscript.js` の内容をコピー&ペースト
 4. Ctrl+S (Cmd+S) で保存
+<img width="980" height="324" alt="image" src="https://github.com/user-attachments/assets/8921a662-ce8e-4461-9d30-723b26808a8b" />
 
 ### 3. 動作確認
 
