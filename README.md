@@ -2,6 +2,8 @@
 
 OBIC7勤務表ページで「出勤/退勤打刻」の時刻を「出勤/退勤」欄に一括でコピーするUserScriptです。
 
+<img width="1142" height="412" alt="image" src="https://github.com/user-attachments/assets/1079e101-76c4-49c9-9401-dff7e90a3391" />
+
 ## 🎯 機能概要
 
 - **一括時刻コピー**: 打刻時刻から勤務時間への自動転記
@@ -92,18 +94,14 @@ const cols = {
 fxxkObic7/
 ├── obic7-userscript.js           # メインUserScript
 ├── README.md                     # 本ドキュメント
-├── CLAUDE.md                     # 開発者向けドキュメント
-├── obic7-auto-fill-specification.md  # 仕様書
-├── gemini-obic7.md              # 分析資料
 └── LICENSE                      # ライセンス
 ```
 
 ## 📝 更新履歴
 
-### v3.1 (2025-08-01)
+### v1.1 (2025-08-01)
 - UserScript版に完全移行
 - ObSpread API直接連携による高い互換性を実現
-- 弾出ウィンドウ対応
 - 日本語コメント・ドキュメント整備
 
 ### v1.0.0 (2025-07-27)
