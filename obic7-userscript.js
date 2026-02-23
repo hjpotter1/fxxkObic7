@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         OBIC7 勤怠入力の効率化ツール
 // @namespace    http://tampermonkey.net/
-// @version      3.1
+// @version      3.2
 // @description  OBIC7勤務表ページで「出勤/退勤打刻」の時刻を「出勤/退勤」欄に一括でコピーします。
 // @author       You
 // @match        *://*/JACWeb30Sat/I003_KozinbetuKinmuhyou2.aspx*
@@ -12,7 +12,7 @@
 (function() {
     'use strict';
 
-    console.log("🚀 OBIC7 効率化ツール v3.1 起動中...");
+    console.log("🚀 OBIC7 効率化ツール v3.2 起動中...");
 
     /**
      * メイン初期化関数
@@ -94,8 +94,8 @@
             const cols = {
                 CLOCK_IN_SOURCE: 63,    // 出勤打刻列
                 CLOCK_OUT_SOURCE: 65,   // 退勤打刻列
-                WORK_START_TARGET: 68,  // 出勤目標列
-                WORK_END_TARGET: 70     // 退勤目標列
+                WORK_START_TARGET: 67,  // 出勤目標列
+                WORK_END_TARGET: 69     // 退勤目標列
             };
 
             let filledCount = 0;
@@ -111,14 +111,17 @@
                 const currentWorkStart = spread.cellValue(i, cols.WORK_START_TARGET);
                 const currentWorkEnd = spread.cellValue(i, cols.WORK_END_TARGET);
 
+                // 設定先が実質的に空かどうかを判定（空文字、0、"0"を空とみなす）
+                const isEmptyValue = (v) => !v || v === "0" || v === 0;
+
                 // 出勤時刻をコピー（元データありかつ設定先が空の場合）
-                if (clockInTime && !currentWorkStart) {
+                if (clockInTime && isEmptyValue(currentWorkStart)) {
                     spread.cellValue(i, cols.WORK_START_TARGET, clockInTime);
                     filledCount++;
                 }
 
                 // 退勤時刻をコピー（元データありかつ設定先が空の場合）
-                if (clockOutTime && !currentWorkEnd) {
+                if (clockOutTime && isEmptyValue(currentWorkEnd)) {
                     spread.cellValue(i, cols.WORK_END_TARGET, clockOutTime);
                     filledCount++;
                 }
